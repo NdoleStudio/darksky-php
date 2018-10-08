@@ -1,0 +1,27 @@
+{
+    "name": "ndolestudio/dark-sky-php",
+    "description": "A PHP Wrapper for the Dark Sky Weather API",
+    "type": "library",
+    "require": {
+        "php": "^7.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4"
+    },
+    "autoload":{
+        "psr-4":{
+            "DarkSky\\": "src/DarkSky",
+            "Tests\\": "tests"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Acho Arnold",
+            "email": "arnold@ndolestudio.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
