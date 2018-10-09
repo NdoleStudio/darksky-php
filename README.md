@@ -2,6 +2,10 @@
 
 This is a PHP wrapper for the official Dark Sky API found at [https://darksky.net/dev/docs](https://darksky.net/dev/docs)
 
+[![Latest Stable Version](https://poser.pugx.org/ndolestudio/darksky-php/v/stable)](https://packagist.org/packages/ndolestudio/darksky-php)
+[![Build Status](https://travis-ci.org/NdoleStudio/darksy-php.svg?branch=master)](https://travis-ci.org/NdoleStudio/darksy-php)
+[![Packagist](https://img.shields.io/packagist/dt/ndolestudio/darksky-php.svg)](https://packagist.org/packages/ndolestudio/darksky-php)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/NdoleStudio/darksky-php/master/LICENSE)
 ## Getting Started
 
 These instructions will guide you on how to install and use this package to get weather information using the Dark Sky API.
