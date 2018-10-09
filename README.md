@@ -20,6 +20,50 @@ composer install ndolestudio/darksky-php
 
 ## Example
 
+Create a class which implements the `LocationDateTimeInput` interface. This class would be used as an input in the `DarkSkyApiClient`
+
+```php
+class Request implements \DarkSky\Contracts\LocationDateTimeInput
+{
+    public function getLatitude(): float
+    {
+        return 33.22;
+    }
+
+    public function getLongitude(): float
+    {
+        return 24.44;
+    }
+
+    public function getDateTime(): DateTime
+    {
+        return new DateTime('now');
+    }
+}
+```
+
+Use the `LocationDateTimeInput` class created above to fetch the weather data using the `DarkSkyApiClient`
+
+```php
+// Require composer dependencies.
+require './vendor/autoload.php';
+
+// Here, we create a DarkSkyApiConfiguration
+$apiConfiguration = new \DarkSky\Configurations\DarkSkyApiConfiguration(
+    ['daily','currently'], // Excluded blocks
+    'https://api.darksky.net/forecast/b95b5555fb5f8e94cf499f4036618e55/', // Api Endpoint
+    'si' // Units
+);
+
+// Use the configuration to create a DarkSkyApiClient
+$darkSkyApiClient = new \DarkSky\Clients\DarkSkyApiClient($apiConfiguration, new \GuzzleHttp\Client());
+
+// Create an instance of the LocationDateTimeInput
+$request = new Request();
+
+// This fetches the json response
+$jsonResponse = $darkSkyApiClient->fetchWeatherData($request);
+```
 
 ## Running the tests
 
@@ -52,16 +96,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **[AchoArnold](https://github.com/AchoArnold)**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/NdoleStudio/darksky-php/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
