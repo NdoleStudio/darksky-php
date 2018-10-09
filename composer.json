@@ -1,5 +1,5 @@
 {
-    "name": "ndolestudio/dark-sky-php",
+    "name": "ndolestudio/darksky-php",
     "description": "A PHP Wrapper for the Dark Sky Weather API",
     "type": "library",
     "require": {
